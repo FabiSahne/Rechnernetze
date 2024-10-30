@@ -3,11 +3,14 @@ import random
 import numpy as np
 import struct
 
+IP = "localhost"
+PORT = 12345
+
 
 def calc_client(s: socket):
     # s = socket.socket(socket.AF_INET, socket.)
     if s.type == socket.SOCK_STREAM:
-        s.connect(('localhost', 12345))
+        s.connect((IP, PORT))
     # random generated id
     id = random.randint(0, 100)
     # user input for operation
@@ -28,14 +31,14 @@ def calc_client(s: socket):
         s.send(msg)
         result = struct.unpack("!Ii", s.recv(1024))
     else:
-        s.sendto(msg, ('localhost', 12345))
+        s.sendto(msg, (IP, PORT))
         result = struct.unpack("!Ii", s.recvfrom(1024)[0])
     if result[0] == id:
         print("Result:", result[1])
 
 
 if __name__ == "__main__":
-    print("1. DGRAM, 2. STREAM")
+    print("1. UDP, 2. TCP")
     sock_type = input("Choose socket type: ")
     s = None
     match sock_type:

@@ -2,6 +2,9 @@ import socket
 import numpy as np
 import struct
 
+IP = "localhost"
+PORT = 12345
+
 
 def decode_message(msg: bytes) -> tuple[int, bytes, np.array]:
     # (id, op) = struct.unpack("!I3s", msg[0:7])
@@ -19,7 +22,7 @@ def calc(op: bytes, n: np.array) -> int:
 
 def start_server(s):
     print("Starting server")
-    s.bind(('localhost', 12345))
+    s.bind((IP, PORT))
     if s.type == socket.SOCK_STREAM:
         s.listen(5)
     serve(s)
@@ -30,11 +33,11 @@ def serve(s: socket):
         if s.type == socket.SOCK_STREAM:
             (c, addr) = s.accept()
             msg = c.recv(1024)
-            print(f"Connection from {addr}")
         else:
             (msg, addr) = s.recvfrom(1024)
         if not msg:
             break
+        print(f"Connection from {addr}")
         print(f"Received: {msg}")
         (id, op, n) = decode_message(msg)
         result = struct.pack("!Ii", id, calc(op, n))
@@ -45,7 +48,7 @@ def serve(s: socket):
             s.sendto(result, addr)
 
 if __name__ == "__main__":
-    print("1. DGRAM, 2. STREAM")
+    print("1. UDP, 2. TCP")
     sock_type = input("Choose socket type: ")
     s = None
     match sock_type:
