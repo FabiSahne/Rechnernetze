@@ -1,18 +1,18 @@
 # HTWG Rechnernetze WS24/25 Laboraufgaben
 
 ## Einstieg in die Socketprogrammierung
-### <span style="color:gray">(1. Einleitung)</span>
-### <span style="color:gray">(2. Vorbereitung)</span>
+#### ${\textsf{\color{gray}(1. Einleitung)}}$
+### ${\textsf{\color{gray}(2. Vorbereitung)}}$
 ### 3. Rechenserver
 Client sendet Rechnung im Format \<ID>\<Rechenoperation>\<$n$>\<$z_1$>\<$z_2$>...\<$z_n$> gesendet.
-- ID ist ein <span style="color:lightgreen">u32</span>[^1] und dient als Identifikator.
-- Rechenoperation sind <span style="color:lightgreen">[u8; 3]</span>, entweder "SUM", "PRO", "MIN" oder "MAX" und UTF-8 kodiert.
-- $n$ ist ein <span style="color:lightgreen">u8</span> und gibt an wie viele Zahlen folgen.
-- $z_1$ bis $z_n$ sind <span style="color:lightgreen">i32</span> mit welchen gerechnet wird.
+- ID ist ein ${\textsf{\color{lightgreen}u32}}$[^1] und dient als Identifikator.
+- Rechenoperation sind ${\textsf{\color{lightgreen}[u8; 3]}}$, entweder "SUM", "PRO", "MIN" oder "MAX" und UTF-8 kodiert.
+- $n$ ist ein ${\textsf{\color{lightgreen}u8}}$ und gibt an wie viele Zahlen folgen.
+- $z_1$ bis $z_n$ sind ${\textsf{\color{lightgreen}i32}}$ mit welchen gerechnet wird.
 
 Server empfängt die Nachricht, rechnet das Ergebnis aus und sendet es im Format \<ID>\<Ergebnis> zurück.
-- ID ist selbiger <span style="color:lightgreen">u32</span>
-- Ergebnis ist das Rechenergebnis eine <span style="color:lightgreen">i32</span>
+- ID ist selbiger ${\textsf{\color{lightgreen}u32}}$
+- Ergebnis ist das Rechenergebnis eine ${\textsf{\color{lightgreen}i32}}$
 
 #### 3.1 Lokale Kommunikation
 
@@ -21,7 +21,7 @@ Server empfängt die Nachricht, rechnet das Ergebnis aus und sendet es im Format
 #### 3.3 Unterstützung für mehrere Clients
 
 ### 4. Portscan
-#### <span style="color:gray">4.1 Beschreibung</span>
+#### ${\textsf{\color{gray}4.1 Beschreibung}}$
 
 #### 4.2 Versuch
 ##### 4.2.1 TCP Port Scanner
