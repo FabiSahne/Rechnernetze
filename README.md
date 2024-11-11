@@ -4,7 +4,7 @@
 ### ${\textsf{\color{gray}(1. Einleitung)}}$
 ### ${\textsf{\color{gray}(2. Vorbereitung)}}$
 ### 3. Rechenserver
-Client sendet Rechnung im Format \<ID>\<Rechenoperation>\<$n$>\<$z_1$>\<$z_2$>...\<$z_n$> gesendet.
+Client sendet Rechnung im Format \<ID>\<Rechenoperation>\<$n$\>\<$z_1$\>\<$z_2$\>...\<$z_n$\> gesendet.
 - ID ist ein ${\textsf{\color{lightgreen}u32}}$[^1] und dient als Identifikator.
 - Rechenoperation sind ${\textsf{\color{lightgreen}[u8; 3]}}$, entweder "SUM", "PRO", "MIN" oder "MAX" und UTF-8 kodiert.
 - $n$ ist ein ${\textsf{\color{lightgreen}u8}}$ und gibt an wie viele Zahlen folgen.
