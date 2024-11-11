@@ -26,7 +26,7 @@ def calc_client(s: socket):
     n = input("Enter numbers separated by space: ")
     n = np.array(list(map(np.int32, n.split())))
     # encode message
-    msg = struct.pack("!I3s", id, op) + n.tobytes()
+    msg = struct.pack("!I3sB", id, op, np.size(n)) + n.tobytes()
     if s.type == socket.SOCK_STREAM:
         s.send(msg)
         result = struct.unpack("!Ii", s.recv(1024))

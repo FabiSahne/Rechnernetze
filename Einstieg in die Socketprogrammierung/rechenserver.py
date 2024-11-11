@@ -10,7 +10,9 @@ def decode_message(msg: bytes) -> tuple[int, bytes, np.array]:
     # (id, op) = struct.unpack("!I3s", msg[0:7])
     id = int.from_bytes(msg[0:4])
     op = msg[4:7]
-    n = np.frombuffer(msg[7:], dtype=np.int32)
+    size = struct.unpack("!B", msg[7:8])[0]
+    last = 8 + size * 4
+    n = np.frombuffer(msg[8:last], dtype=np.int32)
     return (id, op, n)
 
 def calc(op: bytes, n: np.array) -> int:
