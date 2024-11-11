@@ -30,6 +30,7 @@ def calc_client(s: socket):
     if s.type == socket.SOCK_STREAM:
         s.send(msg)
         result = struct.unpack("!Ii", s.recv(1024))
+        s.close()
     else:
         s.sendto(msg, (IP, PORT))
         result = struct.unpack("!Ii", s.recvfrom(1024)[0])
