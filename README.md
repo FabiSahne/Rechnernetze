@@ -47,16 +47,74 @@ Server empfängt die Nachricht, rechnet das Ergebnis aus und sendet es im Format
     - Nein, es folgt der Fehler: "`OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted`"
 
 #### 3.3 Unterstützung für mehrere Clients
+Siehe `rechenserver-multithreaded.py`.
 
 ### 4. Portscan
 #### ${\textsf{\color{gray}4.1 Beschreibung}}$
 
 #### 4.2 Versuch
-##### 4.2.1 TCP Port Scanner
-
-##### 4.2.2 UDP Port Scanner
+##### 4.2.1 TCP Port Scanner und 4.2.2 UDP Port Scanner
+Siehe `port-scanner.py`.
 
 #### 4.3 Fragen
+Fragen
+##### 1. Geben Sie die Liste der offenen Ports an.
+|Port|TCP|UDP|
+|---:|:--|:--|
+|1   |||
+|2   |||
+|3   |||
+|4   |||
+|5   |||
+|6   |||
+|7   |||
+|8   |||
+|9   |||
+|10  |||
+|11  |||
+|12  |||
+|13  |||
+|14  |||
+|15  |||
+|16  |||
+|17  |||
+|18  |||
+|19  |||
+|20  |||
+|21  |||
+|22  |||
+|23  |||
+|24  |||
+|25  |||
+|26  |||
+|27  |||
+|28  |||
+|29  |||
+|30  |||
+|31  |||
+|32  |||
+|33  |||
+|34  |||
+|35  |||
+|36  |||
+|37  |||
+|38  |||
+|39  |||
+|40  |||
+|41  |||
+|42  |||
+|43  |||
+|44  |||
+|45  |||
+|46  |||
+|47  |||
+|48  |||
+|49  |||
+|50  |||
+
+##### 2. Wählen Sie für TCP und UDP jeweils einen offenen und einen geschlossenen Port und erklären Sie die entsprechende Paketsequenz, die Sie in Wireshark aufgezeichnet haben.
+
+##### 3. Auf Port 7 des Servers läuft ein Echo-Dienst. Testen Sie ihr Client-Skript mit dem Echo-Server. Versuchen Sie das TCP und das UDP Skript.
 
 ### 5. Mail
 #### 5.1 SMTP über OpenSSL
