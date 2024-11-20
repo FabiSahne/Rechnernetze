@@ -59,58 +59,58 @@ Siehe `port-scanner.py`.
 #### 4.3 Fragen
 Fragen
 ##### 1. Geben Sie die Liste der offenen Ports an.
-|Port|TCP|UDP|
-|---:|:--|:--|
-|1   |||
-|2   |||
-|3   |||
-|4   |||
-|5   |||
-|6   |||
-|7   |||
-|8   |||
-|9   |||
-|10  |||
-|11  |||
-|12  |||
-|13  |||
-|14  |||
-|15  |||
-|16  |||
-|17  |||
-|18  |||
-|19  |||
-|20  |||
-|21  |||
-|22  |||
-|23  |||
-|24  |||
-|25  |||
-|26  |||
-|27  |||
-|28  |||
-|29  |||
-|30  |||
-|31  |||
-|32  |||
-|33  |||
-|34  |||
-|35  |||
-|36  |||
-|37  |||
-|38  |||
-|39  |||
-|40  |||
-|41  |||
-|42  |||
-|43  |||
-|44  |||
-|45  |||
-|46  |||
-|47  |||
-|48  |||
-|49  |||
-|50  |||
+|Port|TCP        |UDP        |
+|---:|:----------|:----------|
+|1   |no response|no response|
+|2   |no response|no response|
+|3   |no response|no response|
+|4   |no response|no response|
+|5   |no response|no response|
+|6   |no response|no response|
+|7   |open       |open       |
+|8   |no response|no response|
+|9   |open       |no response|
+|10  |no response|no response|
+|11  |no response|no response|
+|12  |no response|no response|
+|13  |open       |open       |
+|14  |no response|no response|
+|15  |no response|no response|
+|16  |no response|no response|
+|17  |open       |open       |
+|18  |no response|no response|
+|19  |open       |no response|
+|20  |no response|no response|
+|21  |no response|no response|
+|22  |no response|no response|
+|23  |no response|no response|
+|24  |no response|no response|
+|25  |no response|no response|
+|26  |no response|no response|
+|27  |no response|no response|
+|28  |no response|no response|
+|29  |no response|no response|
+|30  |no response|no response|
+|31  |no response|no response|
+|32  |no response|no response|
+|33  |no response|no response|
+|34  |no response|no response|
+|35  |no response|no response|
+|36  |no response|no response|
+|37  |no response|no response|
+|38  |no response|no response|
+|39  |no response|no response|
+|40  |no response|no response|
+|41  |no response|no response|
+|42  |no response|no response|
+|43  |no response|no response|
+|44  |no response|no response|
+|45  |no response|no response|
+|46  |no response|no response|
+|47  |no response|no response|
+|48  |no response|no response|
+|49  |no response|no response|
+|50  |no response|no response|
 
 ##### 2. Wählen Sie für TCP und UDP jeweils einen offenen und einen geschlossenen Port und erklären Sie die entsprechende Paketsequenz, die Sie in Wireshark aufgezeichnet haben.
 
