@@ -6,6 +6,7 @@ import socket
 import base64
 import ssl
 import time
+import os
 
 
 def print_info(text: str, end="\n") -> None:
@@ -31,6 +32,7 @@ def build_connection() -> socket.socket:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print_info("Connecting to asmtp.htwg-konstanz.de...")
     s.connect(("asmtp.htwg-konstanz.de", 587))
+    print(s.recv(1024).decode("utf-8"))
     print_info("Connected to asmtp.htwg-konstanz.de.")
     print_info("Sending EHLO...")
     s.send(b"EHLO asmtp.htwg-konstanz.de\r\n")
@@ -104,6 +106,9 @@ if __name__ == "__main__":
     sock = build_connection()
     print_info("Wrapping socket...")
     context = ssl.create_default_context()
+    context.minimum_version = ssl.TLSVersion.TLSv1
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
     try:
         ssl_socket = context.wrap_socket(
             sock,
@@ -113,8 +118,8 @@ if __name__ == "__main__":
         print_info("Socket wrapped.")
         send_email(
             ssl_socket,
-            "fa681wol",
-            "password",
+            os.environ["SMTPUSER"],
+            os.environ["SMTPPASS"],
             "fa681wol@htwg-konstanz.de",
             "f99wolter@gmail.com",
             "Test",
