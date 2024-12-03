@@ -114,7 +114,7 @@ if __name__ == "__main__":
         send_email(
             ssl_socket,
             "fa681wol",
-            "ezB4MB9DBDNqAr",
+            "password",
             "fa681wol@htwg-konstanz.de",
             "f99wolter@gmail.com",
             "Test",
