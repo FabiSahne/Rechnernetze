@@ -1,6 +1,7 @@
 # HTWG Rechnernetze WS24/25 Laboraufgaben
 
 ## Einstieg in die Socketprogrammierung
+
 ### ${\textsf{\color{gray}(1. Einleitung)}}$
 ### ${\textsf{\color{gray}(2. Vorbereitung)}}$
 ### 3. Rechenserver
@@ -113,12 +114,41 @@ Fragen
 |50  |no response|no response|
 
 ##### 2. Wählen Sie für TCP und UDP jeweils einen offenen und einen geschlossenen Port und erklären Sie die entsprechende Paketsequenz, die Sie in Wireshark aufgezeichnet haben.
+Client sendet SYN
+Server antwortet mit SYN-ACK
+Client sendet ACK
+Verbindung etabliert
+
+TCP geschlossen (z.B. Port 8):
+
+Client sendet SYN
+Server antwortet mit RST-ACK
+Verbindungsaufbau abgebrochen
+
+UDP offen (Port 7):
+
+Client sendet UDP-Datagramm
+Server antwortet mit UDP-Datagramm
+
+UDP geschlossen (die meisten anderen Ports):
+
+Client sendet UDP-Datagramm
+Keine Antwort (Timeout)
 
 ##### 3. Auf Port 7 des Servers läuft ein Echo-Dienst. Testen Sie ihr Client-Skript mit dem Echo-Server. Versuchen Sie das TCP und das UDP Skript.
+=== TCP ECHO Test ===
+Verbindungsaufbau zu 141.37.168.26:7 (TCP)...
+Verbindung hergestellt!
+Sende Nachricht: Hello ECHO Server!
+Empfangene Antwort: Hello ECHO Server!
 
+=== UDP ECHO Test ===
+Sende Nachricht an 141.37.168.26:7 (UDP): Hello ECHO Server!
+Empfangene Antwort von ('141.37.168.26', 7): Hello ECHO Server!
 ### 5. Mail
 #### 5.1 SMTP über OpenSSL
-
+Das Folgen der Anleitung hat super funktioniert, habe sowohl Emails normal an mich selbst als auch von einer "fake email" an mich selbst senden können.
 #### 5.2 SMTP über Python
+Implementierung siehe `smtp.py`.
 
 [^1]: Datentypen sind, der Kürze halber und um Verwechslungen zu vermeiden, wie in Rust angegeben.
